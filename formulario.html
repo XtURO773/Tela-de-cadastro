@@ -2,11 +2,15 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsividade -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro EA Play</title>
     <link rel="stylesheet" href="style-formulario.css">
 </head>
 <body onload="listarUsuarios(); mostrarUsuarioLogado();">
+    <div class="navbar">
+        <a href="login.html">logar</a>
+    </div>
+
     <div class="box">
         <form id="cadastroForm">
             <fieldset>
@@ -65,6 +69,7 @@
         <br>
         <div id="listaUsuarios"></div>
     </div>
+
     <script src="localstorage.js"></script>
     <script>
         document.getElementById("cadastroForm").addEventListener("submit", function(event) {
@@ -78,3 +83,4 @@
     </script>
 </body>
 </html>
+

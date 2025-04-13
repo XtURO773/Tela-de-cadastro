@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>login EA Play</title>
+    <link rel="stylesheet" href="style-login.css">
+</head>
+<body onload="listarUsuarios(); mostrarUsuarioLogado();">
+    <div class="box">
+        <form id="cadastroForm">
+            <fieldset>
+                <legend><b>login EA Play</b></legend>
+                <br>
+                <div class="inputBox">
+                    <input type="text" name="nome" id="nome" class="inputUser" required>
+                    <label for="nome" class="labelInput">Nome completo</label>
+                </div>
+                <br><br>
+                <div class="inputBox">
+                    <input type="text" name="email" id="email" class="inputUser" required>
+                    <label for="email" class="labelInput">Email</label>
+                </div>
+                <br><br>
+                <div class="inputBox">
+                    <input type="password" name="senha" id="senha" class="inputUser" required>
+                    <label for="senha" class="labelInput">Senha</label>
+                </div>       
+                <br><br>
+                <input type="submit" value="Logar" id="submit">
+            </fieldset>
+        </form>
+        <br>
+        <div id="usuarioLogado"></div>
+        <br>
+        <div id="listaUsuarios"></div>
+    </div>
+    <script src="localstorage.js"></script>
+    <script>
+        document.getElementById("cadastroForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const nome = document.getElementById("nome").value;
+            const email = document.getElementById("email").value;
+            const senha = document.getElementById("senha").value;
+            cadastrarUsuario(nome, email, senha);
+            listarUsuarios();
+        });
+    </script>
+</body>
+</html>
